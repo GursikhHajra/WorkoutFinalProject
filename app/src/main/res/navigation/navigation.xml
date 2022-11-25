@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment2">
+    <fragment
+        android:id="@+id/titleFragment2"
+        android:name="project.st991571169st991571540.gursikhpeter.TitleFragment"
+        android:label="TitleFragment"
+        tools:layout="@layout/title_fragment">
+        <action
+            android:id="@+id/action_titleFragment2_to_exerciseHome"
+            app:destination="@id/exerciseHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseHome"
+        android:name="project.st991571169st991571540.gursikhpeter.ExerciseHome"
+        android:label="ExerciseHome"
+        tools:layout="@layout/exercise_home"/>
+</navigation>
