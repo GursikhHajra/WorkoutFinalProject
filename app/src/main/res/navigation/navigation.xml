@@ -17,5 +17,27 @@
         android:id="@+id/exerciseHome"
         android:name="project.st991571169st991571540.gursikhpeter.ExerciseHome"
         android:label="ExerciseHome"
-        tools:layout="@layout/exercise_home"/>
+        tools:layout="@layout/exercise_home">
+        <action
+            android:id="@+id/action_exerciseHome_to_excerciseOneFragment"
+            app:destination="@id/excerciseOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/excerciseOneFragment"
+        android:name="project.st991571169st991571540.gursikhpeter.ExerciseOneFragment"
+        android:label="fragment_excercise_one"
+        tools:layout="@layout/fragment_excercise_one" >
+        <action
+            android:id="@+id/action_excerciseOneFragment_to_excerciseAddOneFragment"
+            app:destination="@id/excerciseAddOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/excerciseAddOneFragment"
+        android:name="project.st991571169st991571540.gursikhpeter.ExerciseAddOneFragment"
+        android:label="fragment_excercise_add_one"
+        tools:layout="@layout/fragment_excercise_add_one" >
+        <action
+            android:id="@+id/action_excerciseAddOneFragment_to_excerciseOneFragment"
+            app:destination="@id/excerciseOneFragment" />
+    </fragment>
 </navigation>
