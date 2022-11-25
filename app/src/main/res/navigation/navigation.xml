@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_exerciseHome_to_exerciseTwoFragment"
             app:destination="@id/exerciseTwoFragment" />
+        <action
+            android:id="@+id/action_exerciseHome_to_exerciseThreeFragment"
+            app:destination="@id/exerciseThreeFragment" />
     </fragment>
     <fragment
         android:id="@+id/excerciseOneFragment"
@@ -60,5 +63,23 @@
         <action
             android:id="@+id/action_exerciseAddTwoFragment3_to_exerciseTwoFragment"
             app:destination="@id/exerciseTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseThreeFragment"
+        android:name="project.st991571169st991571540.gursikhpeter.ExerciseThreeFragment"
+        android:label="fragment_exercise_three"
+        tools:layout="@layout/fragment_exercise_three" >
+        <action
+            android:id="@+id/action_exerciseThreeFragment_to_exerciseAddThreeFragment"
+            app:destination="@id/exerciseAddThreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseAddThreeFragment"
+        android:name="project.st991571169st991571540.gursikhpeter.exerciseAddThreeFragment"
+        android:label="fragment_exercise_add_three"
+        tools:layout="@layout/fragment_exercise_add_three" >
+        <action
+            android:id="@+id/action_exerciseAddThreeFragment_to_exerciseThreeFragment"
+            app:destination="@id/exerciseThreeFragment" />
     </fragment>
 </navigation>

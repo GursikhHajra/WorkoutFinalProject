@@ -25,6 +25,10 @@ class ExerciseHome : Fragment() {
         binding.btnEx2.setOnClickListener{ view : View ->
             view.findNavController().navigate(R.id.action_exerciseHome_to_exerciseTwoFragment)
         }
+
+        binding.btnEx3.setOnClickListener{ view : View ->
+            view.findNavController().navigate(R.id.action_exerciseHome_to_exerciseThreeFragment)
+        }
         return binding.root
     }
 }
