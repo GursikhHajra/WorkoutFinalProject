@@ -22,7 +22,9 @@ class ExerciseHome : Fragment() {
             view.findNavController().navigate(R.id.action_exerciseHome_to_excerciseOneFragment)
         }
 
-
+        binding.btnEx2.setOnClickListener{ view : View ->
+            view.findNavController().navigate(R.id.action_exerciseHome_to_exerciseTwoFragment)
+        }
         return binding.root
     }
 }
