@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_titleFragment2_to_exerciseHome"
             app:destination="@id/exerciseHome" />
+        <action
+            android:id="@+id/action_titleFragment2_to_dietJournal"
+            app:destination="@id/dietJournal" />
     </fragment>
     <fragment
         android:id="@+id/exerciseHome"
@@ -81,5 +84,23 @@
         <action
             android:id="@+id/action_exerciseAddThreeFragment_to_exerciseThreeFragment"
             app:destination="@id/exerciseThreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietJournal"
+        android:name="project.st991571169st991571540.gursikhpeter.DietJournal"
+        android:label="fragment_diet_journal"
+        tools:layout="@layout/fragment_diet_journal" >
+        <action
+            android:id="@+id/action_dietJournal_to_dietJournalAdd"
+            app:destination="@id/dietJournalAdd" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietJournalAdd"
+        android:name="project.st991571169st991571540.gursikhpeter.DietJournalAdd"
+        android:label="fragment_diet_journal_add"
+        tools:layout="@layout/fragment_diet_journal_add" >
+        <action
+            android:id="@+id/action_dietJournalAdd_to_dietJournal"
+            app:destination="@id/dietJournal" />
     </fragment>
 </navigation>
