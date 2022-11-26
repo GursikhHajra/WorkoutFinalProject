@@ -2,4 +2,9 @@
     <string name="app_name">WorkoutFinalProject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aboutdescription">Welcome to the Workout and Diet Tracking App.\n This app
+    is intended to help you track your daily exercises and also track your daily meals and calories of each meal.\n
+    This app also sends you notifications daily to help you keep using the diet journal.\n This app was made as
+    a project by a student team: Peter Mascherin and Gursikh Hajra.\n We hope you enjoy the app.</string>
+    <string name="abouttitle">About Workout and Diet Tracking</string>
 </resources>

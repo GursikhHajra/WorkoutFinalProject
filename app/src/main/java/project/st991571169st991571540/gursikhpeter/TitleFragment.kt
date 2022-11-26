@@ -31,6 +31,10 @@ class TitleFragment: Fragment() {
             view.findNavController().navigate(R.id.action_titleFragment2_to_dietJournal)
         }
 
+        binding.btnabout.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_titleFragment2_to_aboutFragment)
+        }
+
         return binding.root
     }
 
