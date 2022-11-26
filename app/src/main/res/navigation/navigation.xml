@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/exerciseAddThreeFragment"
-        android:name="project.st991571169st991571540.gursikhpeter.exerciseAddThreeFragment"
+        android:name="project.st991571169st991571540.gursikhpeter.ExerciseAddThreeFragment"
         android:label="fragment_exercise_add_three"
         tools:layout="@layout/fragment_exercise_add_three" >
         <action

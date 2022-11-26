@@ -10,7 +10,7 @@ import androidx.navigation.findNavController
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentExerciseAddThreeBinding
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentExerciseAddTwoBinding
 
-class exerciseAddThreeFragment : Fragment() {
+class ExerciseAddThreeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
