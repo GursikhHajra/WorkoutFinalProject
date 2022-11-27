@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundbase">
+
         <TextView
             android:id="@+id/titletxt"
             android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
             android:shadowDx="6"
             android:shadowDy="6"
             android:shadowRadius="4"
-            android:text="@string/add1"
+            android:text="@string/add"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -40,12 +41,12 @@
             app:layout_constraintTop_toBottomOf="@+id/txtDistance"
             tools:ignore="MissingConstraints" />
 
-        <TextView
+        <Button
             android:id="@+id/txtTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="176dp"
-            android:text="Enter Time"
+            android:text="Select Time"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -55,9 +56,11 @@
 
         <EditText
             android:id="@+id/txtDistance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:layout_height="56dp"
             android:layout_marginTop="60dp"
+            android:background="@color/purple_500"
+            android:inputType="number"
             android:text="Enter Distance"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -67,22 +70,34 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTime" />
 
-        <TextView
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="76dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="352dp"
+            android:alpha="0.420"
+            android:src="@drawable/ce"
+            android:translationZ="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
             android:id="@+id/btnDate"
-            android:layout_width="411dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:textSize="30dp"
-            android:inputType="date"
             android:onClick="openDatePicker"
             android:shadowColor="#FF5722"
-            android:text="Enter Date"
+            android:text="Select Date"
             android:textAlignment="center"
             android:textColor="@color/white"
+            android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/txtTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titletxt"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="0dp" />
-
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

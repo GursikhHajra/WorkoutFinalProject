@@ -42,12 +42,12 @@
             app:layout_constraintTop_toBottomOf="@+id/txtDistance"
             tools:ignore="MissingConstraints" />
 
-        <TextView
+        <Button
             android:id="@+id/txtTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="176dp"
-            android:text="Enter Time"
+            android:text="Select Time"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -57,10 +57,12 @@
 
         <EditText
             android:id="@+id/txtDistance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:layout_height="56dp"
             android:layout_marginTop="60dp"
-            android:text="Enter Number of Push Up"
+            android:background="@color/purple_500"
+            android:inputType="number"
+            android:text="Enter Push Ups"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -69,23 +71,47 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTime" />
 
-        <TextView
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="392dp"
+            android:alpha="0.420"
+            android:src="@drawable/pushup"
+            android:translationZ="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.006"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="392dp"
+            android:alpha="0.420"
+            android:src="@drawable/pushup"
+            android:translationZ="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
             android:id="@+id/btnDate"
-            android:layout_width="411dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:textSize="30dp"
-            android:inputType="date"
             android:onClick="openDatePicker"
             android:shadowColor="#FF5722"
-            android:text="Enter Date"
+            android:text="Select Date"
             android:textAlignment="center"
             android:textColor="@color/white"
+            android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/txtTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titletxt"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="0dp" />
-
-
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

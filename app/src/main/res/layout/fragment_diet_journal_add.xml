@@ -21,7 +21,7 @@
             android:shadowDx="6"
             android:shadowDy="6"
             android:shadowRadius="4"
-            android:text="@string/add1"
+            android:text="@string/dietAdd"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -30,12 +30,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <Button
             android:id="@+id/btnAdd"
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
+            android:layout_marginTop="44dp"
             android:background="@drawable/rounded_corners"
             android:text="Add / Update"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,64 +44,93 @@
             app:layout_constraintTop_toBottomOf="@+id/cal"
             tools:ignore="MissingConstraints" />
 
-        <TextView
+        <Button
             android:id="@+id/txtTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="176dp"
-            android:text="Enter Time"
+            android:layout_marginTop="180dp"
+            android:text="Select Time"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titletxt" />
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="328dp"
+            android:alpha="0.420"
+            android:src="@drawable/foodicon"
+            android:translationZ="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="83dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="328dp"
+            android:alpha="0.420"
+            android:src="@drawable/foodicon"
+            android:translationZ="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/food"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_width="240dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/purple_500"
+            android:inputType="number"
             android:text="Enter Food Name"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTime" />
 
         <EditText
             android:id="@+id/cal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_width="238dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="140dp"
+            android:background="@color/purple_500"
             android:text="Enter Calorie"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.479"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTime" />
 
-        <TextView
+        <Button
             android:id="@+id/btnDate"
-            android:layout_width="411dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:inputType="date"
             android:onClick="openDatePicker"
             android:shadowColor="#FF5722"
-            android:text="Enter Date"
+            android:text="Select Date"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/txtTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titletxt"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
