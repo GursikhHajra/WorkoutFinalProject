@@ -10,11 +10,12 @@
         android:layout_height="match_parent"
         android:background="@color/backgroundbase">
 
+
         <TextView
             android:id="@+id/titletxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="36dp"
             android:gravity="center"
             android:outlineAmbientShadowColor="#573E3E"
             android:shadowColor="@color/shadowcolour"
@@ -30,7 +31,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <Button
             android:id="@+id/btnAdd"
             style="@style/Widget.MaterialComponents.Button.Icon"
@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
             android:background="@drawable/rounded_corners"
+            app:backgroundTint="@color/buttoncolour"
             android:text="Add / Update"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="180dp"
+            android:background="@drawable/rounded_corners"
+            app:backgroundTint="@color/buttoncolour"
             android:text="Select Time"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -89,11 +92,13 @@
             android:layout_width="240dp"
             android:layout_height="56dp"
             android:layout_marginTop="40dp"
-            android:background="@color/purple_500"
+            android:background="@drawable/rounded_corners"
+            app:backgroundTint="@color/buttoncolour"
+            android:hint="Enter Meal Name"
             android:inputType="number"
-            android:text="Enter Food Name"
             android:textAlignment="center"
             android:textColor="@color/white"
+            android:textColorHint="#8BFFFFFF"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -102,14 +107,16 @@
 
         <EditText
             android:id="@+id/cal"
-            android:layout_width="238dp"
+            android:layout_width="299dp"
             android:layout_height="58dp"
             android:layout_marginTop="140dp"
-            android:background="@color/purple_500"
-            android:text="Enter Calorie"
+            android:background="@drawable/rounded_corners"
+            android:hint="Enter Meal Calories"
             android:textAlignment="center"
             android:textColor="@color/white"
+            android:textColorHint="#8BFFFFFF"
             android:textSize="30dp"
+            app:backgroundTint="@color/buttoncolour"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.479"
             app:layout_constraintStart_toStartOf="parent"
@@ -120,6 +127,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
+            android:background="@drawable/rounded_corners"
+            app:backgroundTint="@color/buttoncolour"
             android:onClick="openDatePicker"
             android:shadowColor="#FF5722"
             android:text="Select Date"
