@@ -74,9 +74,7 @@ class ExerciseAddOneFragment : Fragment() {
         timePicker.show()
         }
 
-        binding.txtDistance.setOnClickListener{
 
-        }
         return binding.root
     }
 }
