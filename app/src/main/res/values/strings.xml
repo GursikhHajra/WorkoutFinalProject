@@ -8,12 +8,12 @@
     a project by a student team: Peter Mascherin and Gursikh Hajra.\n We hope you enjoy the app.</string>
     <string name="abouttitle">About Workout and Diet Tracking</string>
     <string name="exTitle">Exercise Home Page</string>
-    <string name="ex1Title"> Exercise 1 Page</string>
-    <string name="ex2Title"> Exercise 2 Page</string>
-    <string name="ex3Title"> Exercise 3 Page</string>
-    <string name="add1"> Exercise 1 From</string>
-    <string name="add"> Exercise 2 From</string>
-    <string name="add3"> Exercise 3 From</string>
+    <string name="ex1Title"> Push Ups</string>
+    <string name="ex2Title"> Cycling</string>
+    <string name="ex3Title"> Weight Lifting</string>
+    <string name="add1"> Push Ups Form</string>
+    <string name="add"> Cycling Form</string>
+    <string name="add3"> Weight Lifting Form</string>
     <string name="dietTitle"> Diet Journal"</string>
-    <string name="dietAdd">Diet Journal From</string>
+    <string name="dietAdd">Diet Journal Form</string>
 </resources>
