@@ -7,4 +7,11 @@
     This app also sends you notifications daily to help you keep using the diet journal.\n This app was made as
     a project by a student team: Peter Mascherin and Gursikh Hajra.\n We hope you enjoy the app.</string>
     <string name="abouttitle">About Workout and Diet Tracking</string>
+    <string name="exTitle">Exercise Home Page</string>
+    <string name="ex1Title"> Exercise 1 Page</string>
+    <string name="ex2Title"> Exercise 2 Page</string>
+    <string name="ex3Title"> Exercise 3 Page</string>
+    <string name="add1"> Exercise 1 From</string>
+    <string name="add"> Exercise 2 From</string>
+    <string name="add3"> Exercise 3 From</string>
 </resources>
