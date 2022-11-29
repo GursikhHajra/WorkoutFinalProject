@@ -22,7 +22,7 @@
             android:shadowDx="6"
             android:shadowDy="6"
             android:shadowRadius="4"
-            android:text="@string/abouttitle"
+            android:text="@string/HomeTitle"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
             android:textStyle="bold"
