@@ -26,7 +26,9 @@
         tools:layout="@layout/exercise_home">
         <action
             android:id="@+id/action_exerciseHome_to_excerciseOneFragment"
-            app:destination="@id/excerciseOneFragment" />
+            app:destination="@id/excerciseOneFragment"
+            app:popUpTo="@id/exerciseHome"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_exerciseHome_to_exerciseTwoFragment"
             app:destination="@id/exerciseTwoFragment" />
@@ -41,7 +43,9 @@
         tools:layout="@layout/fragment_excercise_one" >
         <action
             android:id="@+id/action_excerciseOneFragment_to_excerciseAddOneFragment"
-            app:destination="@id/excerciseAddOneFragment" />
+            app:destination="@id/excerciseAddOneFragment"
+            app:popUpTo="@id/excerciseOneFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/excerciseAddOneFragment"
@@ -50,7 +54,9 @@
         tools:layout="@layout/fragment_excercise_add_one" >
         <action
             android:id="@+id/action_excerciseAddOneFragment_to_excerciseOneFragment"
-            app:destination="@id/excerciseOneFragment" />
+            app:destination="@id/excerciseOneFragment"
+            app:popUpTo="@id/exerciseHome"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/exerciseTwoFragment"
@@ -59,7 +65,9 @@
         tools:layout="@layout/fragment_exercise_two" >
         <action
             android:id="@+id/action_exerciseTwoFragment_to_exerciseAddTwoFragment3"
-            app:destination="@id/exerciseAddTwoFragment3" />
+            app:destination="@id/exerciseAddTwoFragment3"
+            app:popUpTo="@id/exerciseHome"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/exerciseAddTwoFragment3"
@@ -68,7 +76,9 @@
         tools:layout="@layout/fragment_exercise_add_two">
         <action
             android:id="@+id/action_exerciseAddTwoFragment3_to_exerciseTwoFragment"
-            app:destination="@id/exerciseTwoFragment" />
+            app:destination="@id/exerciseTwoFragment"
+            app:popUpTo="@id/exerciseAddTwoFragment3"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/exerciseThreeFragment"
@@ -77,7 +87,9 @@
         tools:layout="@layout/fragment_exercise_three" >
         <action
             android:id="@+id/action_exerciseThreeFragment_to_exerciseAddThreeFragment"
-            app:destination="@id/exerciseAddThreeFragment" />
+            app:destination="@id/exerciseAddThreeFragment"
+            app:popUpTo="@id/exerciseHome"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/exerciseAddThreeFragment"
@@ -86,7 +98,9 @@
         tools:layout="@layout/fragment_exercise_add_three" >
         <action
             android:id="@+id/action_exerciseAddThreeFragment_to_exerciseThreeFragment"
-            app:destination="@id/exerciseThreeFragment" />
+            app:destination="@id/exerciseThreeFragment"
+            app:popUpTo="@id/exerciseAddThreeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/dietJournal"
@@ -95,7 +109,9 @@
         tools:layout="@layout/fragment_diet_journal" >
         <action
             android:id="@+id/action_dietJournal_to_dietJournalAdd"
-            app:destination="@id/dietJournalAdd" />
+            app:destination="@id/dietJournalAdd"
+            app:popUpTo="@id/dietJournal"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/dietJournalAdd"
@@ -104,7 +120,9 @@
         tools:layout="@layout/fragment_diet_journal_add" >
         <action
             android:id="@+id/action_dietJournalAdd_to_dietJournal"
-            app:destination="@id/dietJournal" />
+            app:destination="@id/dietJournal"
+            app:popUpTo="@id/dietJournalAdd"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
