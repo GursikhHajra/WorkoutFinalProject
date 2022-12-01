@@ -12,4 +12,11 @@ interface ExerciseOneDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(exerciseOne: ExerciseOneEntity)
+
+    @Query("DELETE FROM exerciseOne")
+    fun deleteAll()
+
+    @Query("UPDATE exerciseOne SET date= :date,time=:time, pushup=:push WHERE id=:id")
+    fun edit(id: Long?, date: String, time: String, push: Int)
+
 }

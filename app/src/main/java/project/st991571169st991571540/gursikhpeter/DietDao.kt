@@ -12,4 +12,10 @@ interface DietDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDiet(diet: DietEntity)
+
+    @Query("DELETE FROM diet")
+    fun deleteAllDiet()
+
+    @Query("UPDATE diet SET date= :date,time=:time, name=:name, calories=:calories WHERE id=:id")
+    fun editDiet(id: Long?, date: String, time: String, name: String, calories: String)
 }

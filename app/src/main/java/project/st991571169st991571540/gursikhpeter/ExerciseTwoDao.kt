@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 
 @Dao
 interface ExerciseTwoDao {
@@ -12,4 +13,12 @@ interface ExerciseTwoDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTwo(exerciseTwo: ExerciseTwoEntity)
+
+    @Query("DELETE FROM exerciseTwo")
+    fun deleteAll2()
+
+    @Query("UPDATE exerciseTwo SET date= :date,time=:time, distance=:distance WHERE id=:id")
+    fun edit2(id: Long?, date: String, time: String, distance: Int)
+
+
 }

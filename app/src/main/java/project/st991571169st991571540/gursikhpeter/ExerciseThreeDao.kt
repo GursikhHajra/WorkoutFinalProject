@@ -12,4 +12,10 @@ interface ExerciseThreeDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(exerciseThree: ExerciseThreeEntity)
+
+    @Query("DELETE FROM exerciseThree")
+    fun deleteAll3()
+
+    @Query("UPDATE exerciseThree SET date= :date,time=:time, weight=:wieght WHERE id=:id")
+    fun edit3(id: Long?, date: String, time: String, wieght: Int)
 }
