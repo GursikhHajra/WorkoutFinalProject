@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.navigation.ExerciseAddOneFragment">
 
+    <data>
+        <variable
+            name="exerciseOneViewModel"
+            type="project.st991571169st991571540.gursikhpeter.ExerciseOneViewmodel" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/titleConstraint"
         android:layout_width="match_parent"

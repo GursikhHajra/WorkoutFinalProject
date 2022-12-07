@@ -10,4 +10,5 @@
     <color name="backgroundbase">#353434</color>
     <color name="shadowcolour">#515151</color>
     <color name="buttoncolour">#9c4c24</color>
+    <color name="headercolour">#242323</color>
 </resources>

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_excercise_add_one.*
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentExerciseAddThreeBinding
@@ -31,7 +32,28 @@ class ExerciseAddThreeFragment : Fragment() {
         val binding: FragmentExerciseAddThreeBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_exercise_add_three, container, false)
 
+        val application = requireNotNull(this.activity).application;
+
+        val dataSource = ProjectDB.getInstance(application).ExerciseThreeDao()
+
+        val viewModelFactory = ExcerciseThreeViewmodelFactory(dataSource,application);
+
+        val exerciseThreeViewmodel = ViewModelProviders.of(this,viewModelFactory).get(ExerciseThreeViewmodel::class.java);
+
+        binding.setLifecycleOwner(this)
+
+        binding.exerciseThreeViewModel = exerciseThreeViewmodel;
+
         binding.btnAdd.setOnClickListener{ view : View ->
+
+            var thedate = binding.btnDate.text.toString()
+            var thetime = binding.txtTime.text.toString()
+            var weight = binding.txtDistance.text.toString().toInt()
+
+            var newExercise = ExerciseThreeEntity(0,thedate,thetime,weight)
+
+            exerciseThreeViewmodel.addExerciseThree(newExercise)
+
             view.findNavController().navigate(R.id.action_exerciseAddThreeFragment_to_exerciseThreeFragment)
         }
 

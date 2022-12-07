@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_excercise_add_one.*
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentExcerciseOneBinding
@@ -31,7 +32,29 @@ class ExerciseAddTwoFragment : Fragment() {
         val binding: FragmentExerciseAddTwoBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_exercise_add_two, container, false)
 
+        val application = requireNotNull(this.activity).application;
+
+        val dataSource = ProjectDB.getInstance(application).ExerciseTwoDao()
+
+        val viewModelFactory = ExcerciseTwoViewmodelFactory(dataSource,application);
+
+        val exerciseTwoViewmodel = ViewModelProviders.of(this,viewModelFactory).get(ExerciseTwoViewmodel::class.java);
+
+        binding.setLifecycleOwner(this)
+
+        binding.exerciseTwoViewModel = exerciseTwoViewmodel;
+
+
         binding.btnAdd.setOnClickListener{ view : View ->
+
+            var thedate = binding.btnDate.text.toString()
+            var thetime = binding.txtTime.text.toString()
+            var distance = binding.txtDistance.text.toString().toInt()
+
+            var newExercise = ExerciseTwoEntity(0,thedate,thetime,distance)
+
+            exerciseTwoViewmodel.addExerciseTwo(newExercise)
+
             view.findNavController().navigate(R.id.action_exerciseAddTwoFragment3_to_exerciseTwoFragment)
         }
 

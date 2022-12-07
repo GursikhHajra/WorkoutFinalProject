@@ -13,6 +13,7 @@ import android.widget.DatePicker
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_excercise_add_one.*
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentExcerciseAddOneBinding
@@ -36,7 +37,29 @@ class ExerciseAddOneFragment : Fragment() {
             inflater, R.layout.fragment_excercise_add_one, container, false
         )
 
+        val application = requireNotNull(this.activity).application;
+
+        val dataSource = ProjectDB.getInstance(application).ExerciseOneDao()
+
+        val viewModelFactory = ExcerciseOneViewmodelFactory(dataSource,application);
+
+        val exerciseOneViewmodel = ViewModelProviders.of(this,viewModelFactory).get(ExerciseOneViewmodel::class.java);
+
+        binding.setLifecycleOwner(this)
+
+        binding.exerciseOneViewModel = exerciseOneViewmodel;
+
         binding.btnAdd.setOnClickListener { view: View ->
+            var thedate = binding.btnDate.text.toString()
+            var thetime = binding.txtTime.text.toString()
+            var pushupsamount = binding.txtDistance.text.toString().toInt()
+
+            var newExercise = ExerciseOneEntity(0,thedate,thetime,pushupsamount)
+
+            exerciseOneViewmodel.addExerciseOne(newExercise)
+
+
+
             view.findNavController()
                 .navigate(R.id.action_excerciseAddOneFragment_to_excerciseOneFragment)
         }

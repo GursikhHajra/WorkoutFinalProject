@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_excercise_add_one.*
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentDietJournalAddBinding
@@ -31,7 +32,29 @@ class DietJournalAdd : Fragment() {
         val binding: FragmentDietJournalAddBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_diet_journal_add, container, false)
 
+        val application = requireNotNull(this.activity).application;
+
+        val dataSource = ProjectDB.getInstance(application).DietDao()
+
+        val viewModelFactory = DietJournalViewmodelFactory(dataSource,application);
+
+        val dietJournalViewmodel = ViewModelProviders.of(this,viewModelFactory).get(DietJournalViewmodel::class.java);
+
+        binding.setLifecycleOwner(this)
+
+        binding.dietJournalViewmodel = dietJournalViewmodel;
+
         binding.btnAdd.setOnClickListener{ view : View ->
+
+            var thedate = binding.btnDate.text.toString()
+            var thetime = binding.txtTime.text.toString()
+            var mealname = binding.food.text.toString()
+            var calories = binding.cal.text.toString()
+
+            var newDiet = DietEntity(0,thedate,thetime,mealname,calories)
+
+            dietJournalViewmodel.addDietEntry(newDiet)
+
             view.findNavController().navigate(R.id.action_dietJournalAdd_to_dietJournal)
         }
         binding.btnDate.setOnClickListener {
