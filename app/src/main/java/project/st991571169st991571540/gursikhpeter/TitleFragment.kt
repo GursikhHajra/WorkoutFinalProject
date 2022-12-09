@@ -1,9 +1,8 @@
 package project.st991571169st991571540.gursikhpeter
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -24,6 +23,8 @@ class TitleFragment: Fragment() {
         val binding: TitleFragmentBinding = DataBindingUtil.inflate(
             inflater, R.layout.title_fragment, container, false)
 
+        setHasOptionsMenu(true)
+
         mDb = ProjectDB.getInstance(requireActivity())
 
         binding.btnEx.setOnClickListener{ view : View ->
@@ -40,6 +41,11 @@ class TitleFragment: Fragment() {
 
 
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.navdrawer_menu, menu)
     }
 
 }

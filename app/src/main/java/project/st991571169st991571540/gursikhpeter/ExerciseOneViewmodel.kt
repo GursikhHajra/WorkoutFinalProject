@@ -4,6 +4,7 @@ import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
 
 class ExerciseOneViewmodel(
@@ -13,11 +14,17 @@ class ExerciseOneViewmodel(
 
     private var exerciseOneJob = Job();
     private var uiScope = CoroutineScope(Dispatchers.Main + exerciseOneJob)
-
+  //  private val repository: ExerciseOneRepository
 
     private var exerciseonelivedata = MutableLiveData<ExerciseOneEntity>();
 
-    private var exerciseonelivedatalist = MutableLiveData<List<ExerciseOneEntity>>();
+    var exerciseonelivedatalist = MutableLiveData<List<ExerciseOneEntity>>();
+
+    init {
+        val doa = ProjectDB.getInstance(application).ExerciseOneDao()
+       // repository = ExerciseOneRepository(doa)
+       // exerciseonelivedatalist = repository.exerciseonelivedatalist as MutableLiveData<List<ExerciseOneEntity>>
+    }
 
 
     fun addExerciseOne(exercise: ExerciseOneEntity)
@@ -31,7 +38,12 @@ class ExerciseOneViewmodel(
     private suspend fun insertExercise(exercise: ExerciseOneEntity)
     {
         withContext(Dispatchers.IO){
-            database.insert(exercise)
+           database.insert(exercise)
+            //repository.insert(exercise)
         }
+    }
+
+    fun delete(exData: ExerciseOneEntity) = viewModelScope.launch(Dispatchers.IO) {
+        database.delete(exData)
     }
 }

@@ -39,7 +39,7 @@ class ExerciseAddOneFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application;
 
-        val dataSource = ProjectDB.getInstance(application).ExerciseOneDao()
+            val dataSource = ProjectDB.getInstance(application).ExerciseOneDao()
 
         val viewModelFactory = ExcerciseOneViewmodelFactory(dataSource,application);
 
@@ -52,7 +52,7 @@ class ExerciseAddOneFragment : Fragment() {
         binding.btnAdd.setOnClickListener { view: View ->
             var thedate = binding.btnDate.text.toString()
             var thetime = binding.txtTime.text.toString()
-            var pushupsamount = binding.txtDistance.text.toString().toInt()
+            var pushupsamount = binding.txtpushup.text.toString().toInt()
 
             var newExercise = ExerciseOneEntity(0,thedate,thetime,pushupsamount)
 
