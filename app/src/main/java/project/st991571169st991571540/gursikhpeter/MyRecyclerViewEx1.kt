@@ -64,11 +64,8 @@ interface IMyRecyclerViewEx1{
     fun onItemClicked(exerciseOneEntity: ExerciseOneEntity)
 }
 */
-import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import project.st991571169st991571540.gursikhpeter.databinding.ListItemEx1Binding
 

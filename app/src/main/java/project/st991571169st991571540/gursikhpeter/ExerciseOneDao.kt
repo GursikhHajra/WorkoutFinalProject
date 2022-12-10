@@ -10,7 +10,7 @@ import androidx.room.Query
 @Dao
 interface ExerciseOneDao {
     @Query("SELECT * FROM exerciseOne")
-    fun getAllExOne(): LiveData<List<ExerciseOneEntity>>
+    fun getAllExOne(): List<ExerciseOneEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(exerciseOne: ExerciseOneEntity)
