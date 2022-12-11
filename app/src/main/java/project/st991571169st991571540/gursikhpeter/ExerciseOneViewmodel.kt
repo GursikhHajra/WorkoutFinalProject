@@ -43,7 +43,11 @@ class ExerciseOneViewmodel(
         }
     }
 
-    fun delete(exData: ExerciseOneEntity) = viewModelScope.launch(Dispatchers.IO) {
-        database.delete(exData)
+    fun delete(exerciseOneEntity: ExerciseOneEntity){
+        uiScope.launch {
+            database.delete(
+                exerciseOneEntity.id
+            )
+        }
     }
 }

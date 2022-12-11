@@ -16,7 +16,7 @@ interface ExerciseOneDao {
     fun insert(exerciseOne: ExerciseOneEntity)
 
     @Delete
-    suspend fun delete(exerciseOne: ExerciseOneEntity)
+    fun delete(exerciseOne: ExerciseOneEntity)
 
     @Query("UPDATE exerciseOne SET date= :date,time=:time, pushup=:push WHERE id=:id")
     fun edit(id: Long?, date: String, time: String, push: Int)

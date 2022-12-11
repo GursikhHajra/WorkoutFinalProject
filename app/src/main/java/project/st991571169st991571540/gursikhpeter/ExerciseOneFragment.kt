@@ -1,6 +1,7 @@
 package project.st991571169st991571540.gursikhpeter
 
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.lifecycle.*
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_excercise_one.*
 import kotlinx.coroutines.*
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentExcerciseOneBinding
 
@@ -18,11 +20,11 @@ class ExerciseOneFragment : Fragment() {
 
     private lateinit var mDb:ProjectDB
    // lateinit var viewModel: ExerciseOneViewmodel
-
+    lateinit var ex1Data: MutableList<ExerciseOneEntity>
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<MyRecyclerViewEx1.ViewHolder>? = null
+    private lateinit var adapter: MyRecyclerViewEx1
     private lateinit var manager: RecyclerView.LayoutManager
-
+    private lateinit var id: ExerciseOneEntity
     private val viewModel by lazy {
         ViewModelProvider(this).get(ExerciseOneViewmodel::class.java)
     }
@@ -63,10 +65,15 @@ class ExerciseOneFragment : Fragment() {
                     adapter = MyRecyclerViewEx1(ex1Data)
                     layoutManager = manager
                 }
-
             }
         }
     }
+
+
+       fun OnDelete(Item : ExerciseOneEntity, position: Int){
+            viewModel.delete(Item)
+        }
+
 
 
 
@@ -95,7 +102,11 @@ val application = requireNotNull(this.activity).application;
 
     private fun displayData(exerciseOneEntities: List<ExerciseOneEntity>) {
         adapter = MyRecyclerViewEx1(exerciseOneEntities)
-        }
+    }
+
+    fun delete(item: ExerciseOneEntity){
+        viewModel.delete(item)
+    }
 
     /*override fun onItemClicked(exerciseOneEntity: ExerciseOneEntity) {
         viewModel.delete(exerciseOneEntity)

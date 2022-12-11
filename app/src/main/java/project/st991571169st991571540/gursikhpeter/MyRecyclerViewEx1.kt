@@ -65,18 +65,31 @@ interface IMyRecyclerViewEx1{
 }
 */
 import android.view.LayoutInflater
+import android.view.ScrollCaptureCallback
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import project.st991571169st991571540.gursikhpeter.databinding.ListItemEx1Binding
+
 
 class MyRecyclerViewEx1(private val ex1Data: List<ExerciseOneEntity>) : RecyclerView.Adapter<MyRecyclerViewEx1.ViewHolder>(){
 
 
     inner class ViewHolder(val binding: ListItemEx1Binding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: ExerciseOneEntity){
+        fun bind(item: ExerciseOneEntity, index: Int){
             binding.exerciseOneEntity = item
+            val deleteItem = binding.btnDelete
+
+
+            deleteItem.setOnClickListener {
+
+            }
         }
+
+
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -88,12 +101,15 @@ class MyRecyclerViewEx1(private val ex1Data: List<ExerciseOneEntity>) : Recycler
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        viewHolder.bind(ex1Data[i])
+        viewHolder.bind(ex1Data[i], i)
+
     }
 
     override fun getItemCount(): Int {
         return ex1Data.size
 }
+
+
     }
 
 
