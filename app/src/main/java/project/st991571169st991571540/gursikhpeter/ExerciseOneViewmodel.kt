@@ -3,6 +3,7 @@ package project.st991571169st991571540.gursikhpeter
 import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
@@ -18,13 +19,35 @@ class ExerciseOneViewmodel(
 
     private var exerciseonelivedata = MutableLiveData<ExerciseOneEntity>();
 
-    var exerciseonelivedatalist = MutableLiveData<List<ExerciseOneEntity>>();
+    var exerciseonelivedatalist = database.getAllExOne()
+
 
     init {
         val doa = ProjectDB.getInstance(application).ExerciseOneDao()
+
        // repository = ExerciseOneRepository(doa)
-       // exerciseonelivedatalist = repository.exerciseonelivedatalist as MutableLiveData<List<ExerciseOneEntity>>
+       // exerciseoneliv/datalist = repository.exerciseonelivedatalist as MutableLiveData<List<ExerciseOneEntity>>
     }
+
+    /*
+    fun getListExerciseOne()
+    {
+        uiScope.launch {
+            getAllExercises()
+        }
+    }
+
+    private suspend fun getAllExercises()
+    {
+        withContext(Dispatchers.IO)
+        {
+            exerciseonelivedatalist =
+                database.getAllExOne()
+        }
+    }
+    */
+
+
 
 
     fun addExerciseOne(exercise: ExerciseOneEntity)
@@ -39,15 +62,19 @@ class ExerciseOneViewmodel(
     {
         withContext(Dispatchers.IO){
            database.insert(exercise)
-            //repository.insert(exercise)
         }
     }
 
     fun delete(exerciseOneEntity: ExerciseOneEntity){
         uiScope.launch {
-            database.delete(
-                exerciseOneEntity.id
-            )
+            deleteexercise(exerciseOneEntity)
+        }
+    }
+
+    private suspend fun deleteexercise(exercise: ExerciseOneEntity)
+    {
+        withContext(Dispatchers.IO){
+            database.delete(exercise)
         }
     }
 }

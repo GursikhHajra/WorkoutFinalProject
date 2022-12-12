@@ -68,11 +68,16 @@ import android.view.LayoutInflater
 import android.view.ScrollCaptureCallback
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import project.st991571169st991571540.gursikhpeter.databinding.ListItemEx1Binding
 
 
 class MyRecyclerViewEx1(private val ex1Data: List<ExerciseOneEntity>) : RecyclerView.Adapter<MyRecyclerViewEx1.ViewHolder>(){
+
+
+
+
 
 
     inner class ViewHolder(val binding: ListItemEx1Binding) : RecyclerView.ViewHolder(binding.root) {
