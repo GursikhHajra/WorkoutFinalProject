@@ -16,7 +16,10 @@ class DietJournalViewmodel(
 
     private var dietjournallivedata = MutableLiveData<DietEntity>();
 
-    private var dietjournallivedatalist = MutableLiveData<List<DietEntity>>();
+   // private var dietjournallivedatalist = MutableLiveData<List<DietEntity>>();
+
+    var dietjournallivedatalist = database.getAllDiet()
+
 
     fun addDietEntry(diet: DietEntity)
     {

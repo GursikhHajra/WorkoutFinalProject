@@ -1,5 +1,6 @@
 package project.st991571169st991571540.gursikhpeter
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -9,7 +10,7 @@ import androidx.room.Update
 @Dao
 interface ExerciseTwoDao {
     @Query("SELECT * FROM exerciseTwo")
-    fun getAllExTwo(): List<ExerciseTwoEntity>
+    fun getAllExTwo(): LiveData<List<ExerciseTwoEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTwo(exerciseTwo: ExerciseTwoEntity)

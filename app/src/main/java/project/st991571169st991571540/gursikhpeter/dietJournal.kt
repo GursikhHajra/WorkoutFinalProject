@@ -6,11 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentDietJournalBinding
-import project.st991571169st991571540.gursikhpeter.databinding.FragmentExcerciseOneBinding
+import androidx.lifecycle.*
 
 class DietJournal : Fragment() {
+
+    private lateinit var mDb:ProjectDB
+    private lateinit var manager: RecyclerView.LayoutManager
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,6 +31,27 @@ class DietJournal : Fragment() {
         binding.btnAdd.setOnClickListener{ view : View ->
             view.findNavController().navigate(R.id.action_dietJournal_to_dietJournalAdd)
         }
+
+        val applicationContext = requireNotNull(this.activity).applicationContext;
+        mDb = ProjectDB.getInstance(applicationContext)
+
+
+        manager = LinearLayoutManager(requireContext())
+
+        val application = requireNotNull(this.activity).application;
+
+        val dataSource = ProjectDB.getInstance(application).DietDao()
+
+        val viewModelFactory = DietJournalViewmodelFactory(dataSource,application);
+
+        val dietJournalViewmodel = ViewModelProviders.of(this,viewModelFactory).get(DietJournalViewmodel::class.java);
+
+        dietJournalViewmodel.dietjournallivedatalist.observe(requireActivity(), Observer {
+            binding.recyclerView.apply {
+                adapter = MyRecyclerViewDiet(it)
+                layoutManager = manager
+            }
+        })
 
         return binding.root
     }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="exerciseThreeEntity"
+            type="project.st991571169st991571540.gursikhpeter.ExerciseThreeEntity" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="#A82222">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#785619"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/weight" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/image_view"
+                android:text="Exercise"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_toEndOf="@id/image_view"
+                android:text="@{exerciseThreeEntity.date}" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:layout_toEndOf="@id/image_view"
+                android:text="@{exerciseThreeEntity.timePicker}" />
+
+            <TextView
+                android:id="@+id/pushup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time"
+                android:layout_toEndOf="@id/image_view"
+                android:text="@{Integer.toString(exerciseThreeEntity.weight)}" />
+
+            <ImageView
+                android:id="@+id/btnEdit"
+                android:layout_width="36dp"
+                android:layout_height="41dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="60dp"
+                android:src="@drawable/ic_baseline_edit_24" />
+
+            <ImageView
+                android:id="@+id/btnDelete"
+                android:layout_width="50dp"
+                android:layout_height="41dp"
+                android:layout_alignTop="@+id/title"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="54dp"
+                android:layout_marginEnd="56dp"
+                android:src="@drawable/ic_baseline_delete_forever_24" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -6,11 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentExcerciseOneBinding
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentExerciseTwoBinding
+import androidx.lifecycle.*
 
 class ExerciseTwoFragment : Fragment() {
+    private lateinit var mDb:ProjectDB
+    private lateinit var manager: RecyclerView.LayoutManager
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,6 +32,27 @@ class ExerciseTwoFragment : Fragment() {
         binding.btnAdd.setOnClickListener{ view : View ->
             view.findNavController().navigate(R.id.action_exerciseTwoFragment_to_exerciseAddTwoFragment3)
         }
+
+        val applicationContext = requireNotNull(this.activity).applicationContext;
+        mDb = ProjectDB.getInstance(applicationContext)
+
+
+        manager = LinearLayoutManager(requireContext())
+
+        val application = requireNotNull(this.activity).application;
+
+        val dataSource = ProjectDB.getInstance(application).ExerciseTwoDao()
+
+        val viewModelFactory = ExcerciseTwoViewmodelFactory(dataSource,application);
+
+        val exerciseTwoViewmodel = ViewModelProviders.of(this,viewModelFactory).get(ExerciseTwoViewmodel::class.java);
+
+        exerciseTwoViewmodel.exercisetwolivedatalist.observe(requireActivity(), Observer {
+            binding.recyclerView.apply {
+                adapter = MyRecyclerViewEx2(it)
+                layoutManager = manager
+            }
+        })
 
         return binding.root
     }

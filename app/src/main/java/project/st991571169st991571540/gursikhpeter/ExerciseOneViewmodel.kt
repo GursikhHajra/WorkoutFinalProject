@@ -19,8 +19,8 @@ class ExerciseOneViewmodel(
 
     private var exerciseonelivedata = MutableLiveData<ExerciseOneEntity>();
 
+    //var exerciseonelivedatalist = database.getAllExOne()
     var exerciseonelivedatalist = database.getAllExOne()
-
 
     init {
         val doa = ProjectDB.getInstance(application).ExerciseOneDao()

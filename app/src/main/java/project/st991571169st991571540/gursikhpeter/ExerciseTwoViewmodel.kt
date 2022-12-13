@@ -16,7 +16,9 @@ class ExerciseTwoViewmodel(
 
     private var exercisetwolivedata = MutableLiveData<ExerciseTwoEntity>();
 
-    private var exercisetwolivedatalist = MutableLiveData<List<ExerciseTwoEntity>>();
+  //  private var exercisetwolivedatalist = MutableLiveData<List<ExerciseTwoEntity>>();
+
+    var exercisetwolivedatalist = database.getAllExTwo()
 
     fun addExerciseTwo(exercise: ExerciseTwoEntity)
     {

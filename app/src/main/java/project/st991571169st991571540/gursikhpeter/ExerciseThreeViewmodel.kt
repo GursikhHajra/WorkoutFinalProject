@@ -16,7 +16,9 @@ class ExerciseThreeViewmodel(
 
     private var exercisethreelivedata = MutableLiveData<ExerciseThreeEntity>();
 
-    private var exercisethreelivedatalist = MutableLiveData<List<ExerciseThreeEntity>>();
+    //private var exercisethreelivedatalist = MutableLiveData<List<ExerciseThreeEntity>>();
+
+    var exercisethreelivedatalist = database.getAllExThree()
 
     fun addExerciseThree(exercise: ExerciseThreeEntity)
     {

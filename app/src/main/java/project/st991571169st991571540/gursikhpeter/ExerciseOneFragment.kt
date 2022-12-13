@@ -25,12 +25,10 @@ class ExerciseOneFragment : Fragment() {
     private lateinit var adapter: MyRecyclerViewEx1
     private lateinit var manager: RecyclerView.LayoutManager
     private lateinit var id: ExerciseOneEntity
-    /*private val viewModel by lazy {
+  /*  private val viewModel by lazy {
         ViewModelProvider(this).get(ExerciseOneViewmodel::class.java)
     }
-    */
-
-
+*/
     override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
@@ -59,11 +57,6 @@ class ExerciseOneFragment : Fragment() {
 
         val exerciseOneViewmodel = ViewModelProviders.of(this,viewModelFactory).get(ExerciseOneViewmodel::class.java);
 
-
-/*        viewModel.exerciseonelivedatalist.observe(viewLifecycleOwner, Observer {
-            displayData(it)
-        })*/
-
         exerciseOneViewmodel.exerciseonelivedatalist.observe(requireActivity(), Observer {
             binding.recyclerView.apply {
                 adapter = MyRecyclerViewEx1(it)
@@ -72,13 +65,29 @@ class ExerciseOneFragment : Fragment() {
         })
 
 
+/*        viewModel.exerciseonelivedatalist.observe(viewLifecycleOwner, Observer {
+            displayData(it)
+        })*/
+
+        /*binding.btnReload.setOnClickListener {
 
 
+        GlobalScope.launch {
+            val ex1Data = mDb.ExerciseOneDao().getAllExOne()
 
-
-       fun OnDelete(Item : ExerciseOneEntity, position: Int){
-            exerciseOneViewmodel.delete(Item)
+            getActivity()?.runOnUiThread(){
+                binding.recyclerView.apply {
+                    adapter = MyRecyclerViewEx1(ex1Data)
+                    layoutManager = manager
+                }
+            }
         }
+    }*/
+
+/*
+       fun OnDelete(Item : ExerciseOneEntity, position: Int){
+            viewModel.delete(Item)
+        }*/
 
 
 
@@ -89,7 +98,7 @@ class ExerciseOneFragment : Fragment() {
         recyclerView.adapter = adapter
 
         val application = requireNotNull(this.activity).application;
-        val application = requireNotNull(this.activity).application;
+val application = requireNotNull(this.activity).application;
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(ExerciseOneViewmodel::class.java)
 
@@ -109,13 +118,10 @@ class ExerciseOneFragment : Fragment() {
     private fun displayData(exerciseOneEntities: List<ExerciseOneEntity>) {
         adapter = MyRecyclerViewEx1(exerciseOneEntities)
     }
-
-    /*
+/*
     fun delete(item: ExerciseOneEntity){
-        viewmodel.delete(item)
-    }
-
-     */
+        viewModel.delete(item)
+    }*/
 
     /*override fun onItemClicked(exerciseOneEntity: ExerciseOneEntity) {
         viewModel.delete(exerciseOneEntity)
