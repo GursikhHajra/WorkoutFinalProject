@@ -4,6 +4,7 @@ import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
 
 class ExerciseThreeViewmodel(
@@ -33,5 +34,11 @@ class ExerciseThreeViewmodel(
         withContext(Dispatchers.IO){
             database.insert(exercise)
         }
+    }
+
+    suspend fun deleteEntry(exercise: ExerciseThreeEntity) = database.deleteEntry(exercise)
+
+    fun deleteEntry2(exercise: ExerciseThreeEntity) = viewModelScope.launch {
+        deleteEntry(exercise)
     }
 }
