@@ -36,28 +36,56 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
-        <TextView
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_toEndOf="@id/image_view"
+                android:textStyle="bold|italic"
+                android:text="Date: " />
+
+            <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
-            android:layout_toEndOf="@id/image_view"
+            android:layout_toEndOf="@id/txtDate"
             android:text="@{exerciseOneEntity.date}" />
+
+            <TextView
+                android:id="@+id/txttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:layout_toEndOf="@id/image_view"
+                android:textStyle="bold|italic"
+                android:text="Time: " />
 
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/date"
-            android:layout_toEndOf="@id/image_view"
+            android:layout_toEndOf="@id/txttime"
             android:text="@{exerciseOneEntity.timePicker}" />
+
+            <TextView
+                android:id="@+id/txtpushup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time"
+                android:layout_toEndOf="@id/image_view"
+                android:textStyle="bold|italic"
+                android:text="PushUps: " />
 
         <TextView
             android:id="@+id/pushup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/time"
-            android:layout_toEndOf="@id/image_view"
+            android:layout_toEndOf="@id/txtpushup"
             android:text="@{Integer.toString(exerciseOneEntity.pushup)}" />
 
         <ImageView

@@ -23,7 +23,6 @@ class MyRecyclerViewEx3(private val ex3Data: List<ExerciseThreeEntity>) :
             binding.exerciseThreeEntity = item
             val deleteItem = binding.btnDelete
             val editItem = binding.btnEdit
-            val mMenus = binding.btnEdit
             deleteItem.setOnClickListener(object : View.OnClickListener {
 
                 override fun onClick(v: View?) {
@@ -38,7 +37,7 @@ class MyRecyclerViewEx3(private val ex3Data: List<ExerciseThreeEntity>) :
 
                     val context = v!!.context
                     //val exerciseAddThreeFragment = ExerciseThreeViewmodel(ProjectDB, activity)
-                    Toast.makeText(context, "Item Deleted", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.v2, Toast.LENGTH_SHORT).show()
                 }
             })
             editItem.setOnClickListener(object : View.OnClickListener {
@@ -55,7 +54,7 @@ class MyRecyclerViewEx3(private val ex3Data: List<ExerciseThreeEntity>) :
 
                     val context = v!!.context
                     //val exerciseAddThreeFragment = ExerciseThreeViewmodel(ProjectDB, activity)
-                    Toast.makeText(context, "To be Edited", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.v2, Toast.LENGTH_SHORT).show()
                 }
             })
 

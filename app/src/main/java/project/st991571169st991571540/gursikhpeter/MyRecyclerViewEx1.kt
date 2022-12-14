@@ -66,8 +66,10 @@ interface IMyRecyclerViewEx1{
 */
 import android.view.LayoutInflater
 import android.view.ScrollCaptureCallback
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import project.st991571169st991571540.gursikhpeter.databinding.ListItemEx1Binding
@@ -82,11 +84,41 @@ class MyRecyclerViewEx1(private val ex1Data: List<ExerciseOneEntity>) :
         fun bind(item: ExerciseOneEntity, index: Int) {
             binding.exerciseOneEntity = item
             val deleteItem = binding.btnDelete
+            val editItem = binding.btnEdit
+            deleteItem.setOnClickListener(object : View.OnClickListener {
+
+                override fun onClick(v: View?) {
+
+                    val activity = v!!.context as AppCompatActivity
+                    val application = requireNotNull(activity).application;
+                    val dataSource = ProjectDB.getInstance(application).ExerciseThreeDao()
+                    val viewModelFactory = ExcerciseThreeViewmodelFactory(dataSource, application);
+
+                    //val exerciseThreeViewmodel = ViewModelProvider.get(ExerciseThreeViewmodel::class.java);
 
 
-            deleteItem.setOnClickListener {
+                    val context = v!!.context
+                    //val exerciseAddThreeFragment = ExerciseThreeViewmodel(ProjectDB, activity)
+                    Toast.makeText(context, R.string.v2, Toast.LENGTH_SHORT).show()
+                }
+            })
+            editItem.setOnClickListener(object : View.OnClickListener {
 
-            }
+                override fun onClick(v: View?) {
+
+                    val activity = v!!.context as AppCompatActivity
+                    val application = requireNotNull(activity).application;
+                    val dataSource = ProjectDB.getInstance(application).ExerciseThreeDao()
+                    val viewModelFactory = ExcerciseThreeViewmodelFactory(dataSource, application);
+
+                    //val exerciseThreeViewmodel = ViewModelProvider.get(ExerciseThreeViewmodel::class.java);
+
+
+                    val context = v!!.context
+                    //val exerciseAddThreeFragment = ExerciseThreeViewmodel(ProjectDB, activity)
+                    Toast.makeText(context, R.string.v2, Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 

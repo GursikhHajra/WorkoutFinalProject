@@ -17,5 +17,25 @@
             android:title="About"
             />
     </group>
+    <group android:checkableBehavior="none">
+        <item android:title="______________________________________________________________"
+            android:iconTint="@color/white"
+            android:enabled="false">
+        </item>
+    </group>
+<group>
+    <item
+        android:id="@+id/excerciseOneFragment"
+        android:title="Excercise PushUp"
+        />
+    <item
+        android:id="@+id/excerciseTwoFragment"
+        android:title="Excercise Cycling"
+        />
+    <item
+        android:id="@+id/excerciseThreeFragment"
+        android:title="Excercise Weightlifting"
+        />
+</group>
 
 </menu>

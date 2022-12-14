@@ -35,28 +35,56 @@
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_toEndOf="@id/image_view"
+                android:textStyle="bold|italic"
+                android:text="Date: " />
+
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
-                android:layout_toEndOf="@id/image_view"
+                android:layout_toEndOf="@id/txtDate"
                 android:text="@{exerciseThreeEntity.date}" />
+
+            <TextView
+                android:id="@+id/txttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:textStyle="bold|italic"
+                android:layout_toEndOf="@id/image_view"
+                android:text="Time: " />
 
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/date"
-                android:layout_toEndOf="@id/image_view"
+                android:layout_toEndOf="@id/txttime"
                 android:text="@{exerciseThreeEntity.timePicker}" />
+
+            <TextView
+                android:id="@+id/txtweight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time"
+                android:textStyle="bold|italic"
+                android:layout_toEndOf="@id/image_view"
+                android:text="Weight: " />
 
             <TextView
                 android:id="@+id/pushup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/time"
-                android:layout_toEndOf="@id/image_view"
+                android:layout_toEndOf="@id/txtweight"
                 android:text="@{Integer.toString(exerciseThreeEntity.weight)}" />
 
             <ImageView

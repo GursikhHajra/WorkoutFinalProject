@@ -30,40 +30,75 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/image_view"
-                android:text="Exercise"
+                android:text="Diet Journal"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_toEndOf="@id/image_view"
+                android:textStyle="bold|italic"
+                android:text="Date: " />
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
-                android:layout_toEndOf="@id/image_view"
+                android:layout_toEndOf="@id/txtDate"
                 android:text="@{diet.date}" />
+
+            <TextView
+                android:id="@+id/txttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:layout_toEndOf="@id/image_view"
+                android:textStyle="bold|italic"
+                android:text="Time: " />
 
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/date"
-                android:layout_toEndOf="@id/image_view"
+                android:layout_toEndOf="@id/txttime"
                 android:text="@{diet.timePicker}" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time"
+                android:layout_toEndOf="@id/image_view"
+                android:textStyle="bold|italic"
+                android:text="Name: " />
 
             <TextView
                 android:id="@+id/pushup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/time"
-                android:layout_toEndOf="@id/image_view"
+                android:layout_toEndOf="@id/txtName"
                 android:text="@{diet.name}" />
+
+            <TextView
+                android:id="@+id/txtcalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pushup"
+                android:layout_toEndOf="@id/image_view"
+                android:textStyle="bold|italic"
+                android:text="Calories: " />
 
             <TextView
                 android:id="@+id/calories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pushup"
-                android:layout_toEndOf="@id/image_view"
+                android:layout_toEndOf="@id/txtcalories"
                 android:text="@{diet.calories}" />
 
             <ImageView
