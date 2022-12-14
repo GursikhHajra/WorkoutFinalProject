@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -29,6 +30,8 @@ class ExerciseHome : Fragment() {
         binding.btnEx3.setOnClickListener{ view : View ->
             view.findNavController().navigate(R.id.action_exerciseHome_to_exerciseThreeFragment)
         }
+
+        (activity as AppCompatActivity).supportActionBar?.title = ("Exercise Home Page")
         return binding.root
     }
 }

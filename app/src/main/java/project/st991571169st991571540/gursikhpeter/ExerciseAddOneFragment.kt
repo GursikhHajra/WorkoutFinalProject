@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -97,6 +98,7 @@ class ExerciseAddOneFragment : Fragment() {
         timePicker.show()
         }
 
+        (activity as AppCompatActivity).supportActionBar?.title = ("Exercise Add Page")
 
         return binding.root
     }

@@ -3,6 +3,7 @@ package project.st991571169st991571540.gursikhpeter
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -41,6 +42,7 @@ class TitleFragment : Fragment() {
             view.findNavController().navigate(R.id.action_titleFragment2_to_aboutFragment)
         }
 
+        (activity as AppCompatActivity).supportActionBar?.title = ("Home Page")
 
         return binding.root
     }

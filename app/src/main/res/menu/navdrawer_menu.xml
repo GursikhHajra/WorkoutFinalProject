@@ -3,14 +3,19 @@
 
     <group>
     <item
-        android:id="@+id/ExcerciseHome"
+        android:id="@+id/exerciseHome"
         android:title="Excercise Home"
         />
 
     <item
-        android:id="@+id/Diet"
+        android:id="@+id/dietJournal"
         android:title="Diet"
         />
+
+        <item
+            android:id="@+id/aboutFragment"
+            android:title="About"
+            />
     </group>
 
 </menu>

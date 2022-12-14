@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -75,6 +76,8 @@ class DietJournal : Fragment() {
         val urlchoice = (0..urlist.size-1).shuffled().last()
 
         binding.dietwebview.loadUrl(urlist[urlchoice])
+
+        (activity as AppCompatActivity).supportActionBar?.title = ("Diet Journal Page")
 
         return binding.root
     }
