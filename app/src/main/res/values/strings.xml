@@ -17,4 +17,6 @@
     <string name="dietTitle"> Diet Journal"</string>
     <string name="dietAdd">Diet Journal Form</string>
     <string name="HomeTitle">Workout And Diet App</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

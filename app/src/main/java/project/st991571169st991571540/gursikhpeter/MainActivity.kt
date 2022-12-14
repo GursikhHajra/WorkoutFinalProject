@@ -25,13 +25,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         @Suppress("UNUSED_VARIABLE")
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
         drawerLayout = binding.drawerLayout
         val navController = this.findNavController(R.id.NavHostFragment)
 
-        NavigationUI.setupWithNavController(binding.navView,  navController)
-            NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
 
 
 
@@ -39,13 +40,12 @@ class MainActivity : AppCompatActivity() {
         scheduleNotification()
     }
 
-    override fun onSupportNavigateUp(): Boolean{
+    override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.NavHostFragment)
         return NavigationUI.navigateUp(navController, drawerLayout)
     }
 
-    private fun scheduleNotification()
-    {
+    private fun scheduleNotification() {
         val intent = Intent(applicationContext, DietNotification::class.java)
         val title = "Diet Journal";
         val notificationlist = arrayOf(
@@ -55,10 +55,10 @@ class MainActivity : AppCompatActivity() {
             "Studies show a 'cheat meal' helps people keep on diets!",
             "Dont give up. Another day is another win",
 
-        )
+            )
         val message = notificationlist.get((notificationlist.indices).shuffled().last())
-        intent.putExtra(titleExtra,title)
-        intent.putExtra(messageExtra,message)
+        intent.putExtra(titleExtra, title)
+        intent.putExtra(messageExtra, message)
 
         val pendingIntent = PendingIntent.getBroadcast(
             applicationContext,
@@ -81,14 +81,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-    private fun createNotificationChannel()
-    {
+    private fun createNotificationChannel() {
         val name = "Diet Notification Channel";
         val description = "The channel for diet journal notifications to use";
         val importance = NotificationManager.IMPORTANCE_DEFAULT;
-        val channel = NotificationChannel(channelId,name, importance)
+        val channel = NotificationChannel(channelId, name, importance)
         channel.description = description;
         val notifmanager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         notifmanager.createNotificationChannel(channel);
