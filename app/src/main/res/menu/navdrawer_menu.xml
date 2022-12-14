@@ -29,11 +29,11 @@
         android:title="Excercise PushUp"
         />
     <item
-        android:id="@+id/excerciseTwoFragment"
+        android:id="@+id/exerciseTwoFragment"
         android:title="Excercise Cycling"
         />
     <item
-        android:id="@+id/excerciseThreeFragment"
+        android:id="@+id/exerciseThreeFragment"
         android:title="Excercise Weightlifting"
         />
 </group>
