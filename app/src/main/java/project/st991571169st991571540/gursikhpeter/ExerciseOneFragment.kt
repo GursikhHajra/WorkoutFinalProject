@@ -133,7 +133,7 @@ val application = requireNotNull(this.activity).application;
         recycler_view.apply {
 
             // set a LinearLayoutManager to handle Android
-            // RecyclerView behavior
+            // RecyclerView behaviorZ
             layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
             adapter = MyRecyclerViewEx1()

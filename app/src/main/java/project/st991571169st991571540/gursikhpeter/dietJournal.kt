@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -52,6 +55,26 @@ class DietJournal : Fragment() {
                 layoutManager = manager
             }
         })
+
+        val urlist = arrayOf("https://www.nia.nih.gov/health/infographics/diet-and-exercise-choices-today-healthier-tomorrow",
+        "https://www.webmd.com/diet/default.htm",
+        "https://www.who.int/initiatives/behealthy/healthy-diet",
+        "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389")
+
+
+        binding.dietwebview.webViewClient = object:WebViewClient(){
+            override fun shouldOverrideUrlLoading(
+                view: WebView?,
+                request: WebResourceRequest?
+            ): Boolean {
+                view?.loadUrl(request?.url.toString())
+                return true;
+            }
+        }
+
+        val urlchoice = (0..urlist.size-1).shuffled().last()
+
+        binding.dietwebview.loadUrl(urlist[urlchoice])
 
         return binding.root
     }

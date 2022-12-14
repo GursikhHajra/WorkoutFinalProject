@@ -3,6 +3,7 @@
     package="project.st991571169st991571540.gursikhpeter">
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
