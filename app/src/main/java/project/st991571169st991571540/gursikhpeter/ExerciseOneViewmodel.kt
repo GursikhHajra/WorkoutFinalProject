@@ -9,13 +9,13 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
 
 class ExerciseOneViewmodel(
-            val database: ExerciseOneDao,
-            application: Application
-            ) : AndroidViewModel(application){
+    val database: ExerciseOneDao,
+    application: Application
+) : AndroidViewModel(application) {
 
     private var exerciseOneJob = Job();
     private var uiScope = CoroutineScope(Dispatchers.Main + exerciseOneJob)
-  //  private val repository: ExerciseOneRepository
+    //  private val repository: ExerciseOneRepository
 
     private var exerciseonelivedata = MutableLiveData<ExerciseOneEntity>();
 
@@ -25,55 +25,33 @@ class ExerciseOneViewmodel(
     init {
         val doa = ProjectDB.getInstance(application).ExerciseOneDao()
 
-       // repository = ExerciseOneRepository(doa)
-       // exerciseoneliv/datalist = repository.exerciseonelivedatalist as MutableLiveData<List<ExerciseOneEntity>>
+        // repository = ExerciseOneRepository(doa)
+        // exerciseoneliv/datalist = repository.exerciseonelivedatalist as MutableLiveData<List<ExerciseOneEntity>>
     }
 
-    /*
-    fun getListExerciseOne()
-    {
+
+    fun addExerciseOne(exercise: ExerciseOneEntity) {
         uiScope.launch {
-            getAllExercises()
+            insertExercise(exercise)
+            Toast.makeText(getApplication(), "Exercise Successfully Added", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 
-    private suspend fun getAllExercises()
-    {
-        withContext(Dispatchers.IO)
-        {
-            exerciseonelivedatalist =
-                database.getAllExOne()
-        }
-    }
-    */
-
-
-
-
-    fun addExerciseOne(exercise: ExerciseOneEntity)
-    {
-            uiScope.launch {
-                insertExercise(exercise)
-                Toast.makeText(getApplication(),"Exercise Successfully Added", Toast.LENGTH_SHORT).show()
-            }
-    }
-
-    private suspend fun insertExercise(exercise: ExerciseOneEntity)
-    {
-        withContext(Dispatchers.IO){
-           database.insert(exercise)
+    private suspend fun insertExercise(exercise: ExerciseOneEntity) {
+        withContext(Dispatchers.IO) {
+            database.insert(exercise)
         }
     }
 
-    fun delete(exerciseOneEntity: ExerciseOneEntity){
+    fun delete(exerciseOneEntity: ExerciseOneEntity) {
         uiScope.launch {
             deleteexercise(exerciseOneEntity)
         }
     }
 
-    private suspend fun deleteexercise(exercise: ExerciseOneEntity)
-    {
-        withContext(Dispatchers.IO){
+    private suspend fun deleteexercise(exercise: ExerciseOneEntity) {
+        withContext(Dispatchers.IO) {
             database.delete(exercise)
         }
     }

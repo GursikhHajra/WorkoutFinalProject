@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import project.st991571169st991571540.gursikhpeter.databinding.FragmentAboutBinding
 
 
-
 class AboutFragment : Fragment() {
 
     override fun onCreateView(
@@ -20,7 +19,8 @@ class AboutFragment : Fragment() {
     ): View? {
 
         val binding: FragmentAboutBinding = DataBindingUtil.inflate(
-            inflater,R.layout.fragment_about,container,false)
+            inflater, R.layout.fragment_about, container, false
+        )
 
         (activity as AppCompatActivity).supportActionBar?.title = ("About Page")
 

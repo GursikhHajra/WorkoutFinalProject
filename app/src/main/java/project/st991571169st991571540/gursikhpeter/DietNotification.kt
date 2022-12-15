@@ -25,6 +25,6 @@ class DietNotification : BroadcastReceiver() {
             .build()
 
         val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        manager.notify(notificationId,notification)
+        manager.notify(notificationId, notification)
     }
 }

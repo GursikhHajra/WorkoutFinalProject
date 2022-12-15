@@ -9,29 +9,28 @@ import kotlinx.coroutines.*
 class DietJournalViewmodel(
     val database: DietDao,
     application: Application
-) : AndroidViewModel(application){
+) : AndroidViewModel(application) {
 
     private var dietJob = Job();
     private var uiScope = CoroutineScope(Dispatchers.Main + dietJob)
 
     private var dietjournallivedata = MutableLiveData<DietEntity>();
 
-   // private var dietjournallivedatalist = MutableLiveData<List<DietEntity>>();
+    // private var dietjournallivedatalist = MutableLiveData<List<DietEntity>>();
 
     var dietjournallivedatalist = database.getAllDiet()
 
 
-    fun addDietEntry(diet: DietEntity)
-    {
+    fun addDietEntry(diet: DietEntity) {
         uiScope.launch {
             insertDietEntry(diet)
-            Toast.makeText(getApplication(),"Diet Entry Successfully Added", Toast.LENGTH_SHORT).show()
+            Toast.makeText(getApplication(), "Diet Entry Successfully Added", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 
-    private suspend fun insertDietEntry(diet: DietEntity)
-    {
-        withContext(Dispatchers.IO){
+    private suspend fun insertDietEntry(diet: DietEntity) {
+        withContext(Dispatchers.IO) {
             database.insertDiet(diet)
         }
     }

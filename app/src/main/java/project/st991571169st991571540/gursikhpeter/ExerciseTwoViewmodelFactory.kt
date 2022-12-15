@@ -4,16 +4,15 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class ExcerciseTwoViewmodelFactory (
+class ExcerciseTwoViewmodelFactory(
     private val datasource: ExerciseTwoDao,
     private val application: Application
-) : ViewModelProvider.Factory{
+) : ViewModelProvider.Factory {
 
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(ExerciseTwoViewmodel::class.java))
-        {
-            return ExerciseTwoViewmodel(datasource,application) as T
+        if (modelClass.isAssignableFrom(ExerciseTwoViewmodel::class.java)) {
+            return ExerciseTwoViewmodel(datasource, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

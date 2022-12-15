@@ -4,16 +4,15 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class DietJournalViewmodelFactory (
+class DietJournalViewmodelFactory(
     private val datasource: DietDao,
     private val application: Application
-) : ViewModelProvider.Factory{
+) : ViewModelProvider.Factory {
 
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(DietJournalViewmodel::class.java))
-        {
-            return DietJournalViewmodel(datasource,application) as T
+        if (modelClass.isAssignableFrom(DietJournalViewmodel::class.java)) {
+            return DietJournalViewmodel(datasource, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

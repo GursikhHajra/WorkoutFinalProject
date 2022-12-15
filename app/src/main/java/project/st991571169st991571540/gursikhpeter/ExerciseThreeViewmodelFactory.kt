@@ -4,16 +4,15 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class ExcerciseThreeViewmodelFactory (
+class ExcerciseThreeViewmodelFactory(
     private val datasource: ExerciseThreeDao,
     private val application: Application
-) : ViewModelProvider.Factory{
+) : ViewModelProvider.Factory {
 
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(ExerciseThreeViewmodel::class.java))
-        {
-            return ExerciseThreeViewmodel(datasource,application) as T
+        if (modelClass.isAssignableFrom(ExerciseThreeViewmodel::class.java)) {
+            return ExerciseThreeViewmodel(datasource, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

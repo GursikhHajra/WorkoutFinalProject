@@ -20,7 +20,7 @@ import java.util.*
 
 class ExerciseAddTwoFragment : Fragment() {
 
-    var formate =  SimpleDateFormat("dd MMM, YYYY", Locale.CANADA)
+    var formate = SimpleDateFormat("dd MMM, YYYY", Locale.CANADA)
     var timeFormat = SimpleDateFormat("hh:mm a", Locale.CANADA)
 
     override fun onCreateView(
@@ -31,64 +31,78 @@ class ExerciseAddTwoFragment : Fragment() {
 
         // Inflate the layout for this fragment
         val binding: FragmentExerciseAddTwoBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_exercise_add_two, container, false)
+            inflater, R.layout.fragment_exercise_add_two, container, false
+        )
 
         val application = requireNotNull(this.activity).application;
 
         val dataSource = ProjectDB.getInstance(application).ExerciseTwoDao()
 
-        val viewModelFactory = ExcerciseTwoViewmodelFactory(dataSource,application);
+        val viewModelFactory = ExcerciseTwoViewmodelFactory(dataSource, application);
 
-        val exerciseTwoViewmodel = ViewModelProviders.of(this,viewModelFactory).get(ExerciseTwoViewmodel::class.java);
+        val exerciseTwoViewmodel =
+            ViewModelProviders.of(this, viewModelFactory).get(ExerciseTwoViewmodel::class.java);
 
         binding.setLifecycleOwner(this)
 
         binding.exerciseTwoViewModel = exerciseTwoViewmodel;
 
 
-        binding.btnAdd.setOnClickListener{ view : View ->
+        binding.btnAdd.setOnClickListener { view: View ->
 
             var thedate = binding.btnDate.text.toString()
             var thetime = binding.txtTime.text.toString()
             var distance = binding.txtDistance.text.toString().toInt()
 
-            var newExercise = ExerciseTwoEntity(0,thedate,thetime,distance)
+            var newExercise = ExerciseTwoEntity(0, thedate, thetime, distance)
 
             exerciseTwoViewmodel.addExerciseTwo(newExercise)
 
-            view.findNavController().navigate(R.id.action_exerciseAddTwoFragment3_to_exerciseTwoFragment)
+            view.findNavController()
+                .navigate(R.id.action_exerciseAddTwoFragment3_to_exerciseTwoFragment)
         }
 
 
         binding.btnDate.setOnClickListener {
             val now = Calendar.getInstance()
-            val datePicker = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                val selectedDate = Calendar.getInstance()
-                selectedDate.set(Calendar.YEAR, year)
-                selectedDate.set(Calendar.MONTH, month)
-                selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                val date = formate.format(selectedDate.time)
+            val datePicker = DatePickerDialog(
+                requireContext(),
+                DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                    val selectedDate = Calendar.getInstance()
+                    selectedDate.set(Calendar.YEAR, year)
+                    selectedDate.set(Calendar.MONTH, month)
+                    selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                    val date = formate.format(selectedDate.time)
 
-                btnDate.text = formate.format(selectedDate.time)
-                Toast.makeText(requireContext(),"Date: " + date, Toast.LENGTH_LONG).show()
-            },
-                now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH))
+                    btnDate.text = formate.format(selectedDate.time)
+                    Toast.makeText(requireContext(), "Date: " + date, Toast.LENGTH_LONG).show()
+                },
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH)
+            )
             datePicker.show()
         }
 
         binding.txtTime.setOnClickListener {
             val now = Calendar.getInstance()
 
-            val timePicker = TimePickerDialog(requireContext(), TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                val selectedTime = Calendar.getInstance()
-                selectedTime.set(Calendar.HOUR_OF_DAY, hourOfDay)
-                selectedTime.set(Calendar.MINUTE, minute)
+            val timePicker = TimePickerDialog(
+                requireContext(), TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                    val selectedTime = Calendar.getInstance()
+                    selectedTime.set(Calendar.HOUR_OF_DAY, hourOfDay)
+                    selectedTime.set(Calendar.MINUTE, minute)
 
-                txtTime.text = timeFormat.format(selectedTime.time)
+                    txtTime.text = timeFormat.format(selectedTime.time)
 
-                Toast.makeText(requireContext(), "Time: " + timeFormat.format(selectedTime.time), Toast.LENGTH_SHORT).show()
-            },
-                now.get(Calendar.HOUR_OF_DAY), now.get(Calendar.MINUTE), false)
+                    Toast.makeText(
+                        requireContext(),
+                        "Time: " + timeFormat.format(selectedTime.time),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                },
+                now.get(Calendar.HOUR_OF_DAY), now.get(Calendar.MINUTE), false
+            )
 
             timePicker.show()
         }

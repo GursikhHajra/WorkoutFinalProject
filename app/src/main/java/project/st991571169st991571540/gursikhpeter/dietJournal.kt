@@ -1,4 +1,9 @@
 package project.st991571169st991571540.gursikhpeter
+/*
+Made By:
+Peter Mascherin - 991571540
+Gursikh Hajra - 991571169
+ */
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,7 +24,7 @@ import androidx.lifecycle.*
 
 class DietJournal : Fragment() {
 
-    private lateinit var mDb:ProjectDB
+    private lateinit var mDb: ProjectDB
     private lateinit var manager: RecyclerView.LayoutManager
 
     override fun onCreateView(
@@ -30,9 +35,10 @@ class DietJournal : Fragment() {
 
         // Inflate the layout for this fragment
         val binding: FragmentDietJournalBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_diet_journal, container, false)
+            inflater, R.layout.fragment_diet_journal, container, false
+        )
 
-        binding.btnAdd.setOnClickListener{ view : View ->
+        binding.btnAdd.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_dietJournal_to_dietJournalAdd)
         }
 
@@ -46,9 +52,10 @@ class DietJournal : Fragment() {
 
         val dataSource = ProjectDB.getInstance(application).DietDao()
 
-        val viewModelFactory = DietJournalViewmodelFactory(dataSource,application);
+        val viewModelFactory = DietJournalViewmodelFactory(dataSource, application);
 
-        val dietJournalViewmodel = ViewModelProviders.of(this,viewModelFactory).get(DietJournalViewmodel::class.java);
+        val dietJournalViewmodel =
+            ViewModelProviders.of(this, viewModelFactory).get(DietJournalViewmodel::class.java);
 
         dietJournalViewmodel.dietjournallivedatalist.observe(requireActivity(), Observer {
             binding.recyclerView.apply {
@@ -57,13 +64,15 @@ class DietJournal : Fragment() {
             }
         })
 
-        val urlist = arrayOf("https://www.nia.nih.gov/health/infographics/diet-and-exercise-choices-today-healthier-tomorrow",
-        "https://www.webmd.com/diet/default.htm",
-        "https://www.who.int/initiatives/behealthy/healthy-diet",
-        "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389")
+        val urlist = arrayOf(
+            "https://www.nia.nih.gov/health/infographics/diet-and-exercise-choices-today-healthier-tomorrow",
+            "https://www.webmd.com/diet/default.htm",
+            "https://www.who.int/initiatives/behealthy/healthy-diet",
+            "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389"
+        )
 
 
-        binding.dietwebview.webViewClient = object:WebViewClient(){
+        binding.dietwebview.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(
                 view: WebView?,
                 request: WebResourceRequest?
@@ -73,7 +82,7 @@ class DietJournal : Fragment() {
             }
         }
 
-        val urlchoice = (0..urlist.size-1).shuffled().last()
+        val urlchoice = (0..urlist.size - 1).shuffled().last()
 
         binding.dietwebview.loadUrl(urlist[urlchoice])
 

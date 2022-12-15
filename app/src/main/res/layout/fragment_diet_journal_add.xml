@@ -4,6 +4,7 @@
     tools:context="com.example.android.navigation.DietJournalAdd">
 
     <data>
+
         <variable
             name="dietJournalViewmodel"
             type="project.st991571169st991571540.gursikhpeter.DietJournalViewmodel" />
@@ -58,11 +59,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="180dp"
             android:background="@drawable/rounded_corners"
-            app:backgroundTint="@color/buttoncolour"
             android:text="Select Time"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
+            app:backgroundTint="@color/buttoncolour"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
@@ -136,13 +137,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:background="@drawable/rounded_corners"
-            app:backgroundTint="@color/buttoncolour"
             android:onClick="openDatePicker"
             android:shadowColor="#FF5722"
             android:text="Select Date"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
+            app:backgroundTint="@color/buttoncolour"
             app:layout_constraintBottom_toTopOf="@+id/txtTime"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

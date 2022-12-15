@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import project.st991571169st991571540.gursikhpeter.databinding.ListItemDietBinding
 
-class MyRecyclerViewDiet(private val dietData: List<DietEntity>):
-    RecyclerView.Adapter<MyRecyclerViewDiet.ViewHolder>()  {
+class MyRecyclerViewDiet(private val dietData: List<DietEntity>) :
+    RecyclerView.Adapter<MyRecyclerViewDiet.ViewHolder>() {
 
     inner class ViewHolder(val binding: ListItemDietBinding) :
         RecyclerView.ViewHolder(binding.root) {

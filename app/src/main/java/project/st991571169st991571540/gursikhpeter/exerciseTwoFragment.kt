@@ -1,4 +1,9 @@
 package project.st991571169st991571540.gursikhpeter
+/*
+Made By:
+Peter Mascherin - 991571540
+Gursikh Hajra - 991571169
+ */
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,7 +21,7 @@ import project.st991571169st991571540.gursikhpeter.databinding.FragmentExerciseT
 import androidx.lifecycle.*
 
 class ExerciseTwoFragment : Fragment() {
-    private lateinit var mDb:ProjectDB
+    private lateinit var mDb: ProjectDB
     private lateinit var manager: RecyclerView.LayoutManager
 
 
@@ -28,10 +33,12 @@ class ExerciseTwoFragment : Fragment() {
 
         // Inflate the layout for this fragment
         val binding: FragmentExerciseTwoBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_exercise_two, container, false)
+            inflater, R.layout.fragment_exercise_two, container, false
+        )
 
-        binding.btnAdd.setOnClickListener{ view : View ->
-            view.findNavController().navigate(R.id.action_exerciseTwoFragment_to_exerciseAddTwoFragment3)
+        binding.btnAdd.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_exerciseTwoFragment_to_exerciseAddTwoFragment3)
         }
 
         val applicationContext = requireNotNull(this.activity).applicationContext;
@@ -44,9 +51,10 @@ class ExerciseTwoFragment : Fragment() {
 
         val dataSource = ProjectDB.getInstance(application).ExerciseTwoDao()
 
-        val viewModelFactory = ExcerciseTwoViewmodelFactory(dataSource,application);
+        val viewModelFactory = ExcerciseTwoViewmodelFactory(dataSource, application);
 
-        val exerciseTwoViewmodel = ViewModelProviders.of(this,viewModelFactory).get(ExerciseTwoViewmodel::class.java);
+        val exerciseTwoViewmodel =
+            ViewModelProviders.of(this, viewModelFactory).get(ExerciseTwoViewmodel::class.java);
 
         exerciseTwoViewmodel.exercisetwolivedatalist.observe(requireActivity(), Observer {
             binding.recyclerView.apply {

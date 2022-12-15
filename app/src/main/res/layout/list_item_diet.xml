@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="diet"
             type="project.st991571169st991571540.gursikhpeter.DietEntity" />
@@ -34,14 +36,16 @@
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/txtDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
                 android:layout_toEndOf="@id/image_view"
-                android:textStyle="bold|italic"
-                android:text="Date: " />
+                android:text="Date: "
+                android:textStyle="bold|italic" />
+
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
@@ -56,8 +60,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/date"
                 android:layout_toEndOf="@id/image_view"
-                android:textStyle="bold|italic"
-                android:text="Time: " />
+                android:text="Time: "
+                android:textStyle="bold|italic" />
 
             <TextView
                 android:id="@+id/time"
@@ -73,8 +77,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/time"
                 android:layout_toEndOf="@id/image_view"
-                android:textStyle="bold|italic"
-                android:text="Name: " />
+                android:text="Name: "
+                android:textStyle="bold|italic" />
 
             <TextView
                 android:id="@+id/pushup"
@@ -90,8 +94,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pushup"
                 android:layout_toEndOf="@id/image_view"
-                android:textStyle="bold|italic"
-                android:text="Calories: " />
+                android:text="Calories: "
+                android:textStyle="bold|italic" />
 
             <TextView
                 android:id="@+id/calories"

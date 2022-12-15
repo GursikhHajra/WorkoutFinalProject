@@ -1,4 +1,9 @@
 package project.st991571169st991571540.gursikhpeter
+/*
+Made By:
+Peter Mascherin - 991571540
+Gursikh Hajra - 991571169
+ */
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,22 +17,25 @@ import project.st991571169st991571540.gursikhpeter.R
 import project.st991571169st991571540.gursikhpeter.databinding.ExerciseHomeBinding
 
 class ExerciseHome : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
         // Inflate the layout for this fragment
         val binding: ExerciseHomeBinding = DataBindingUtil.inflate(
-            inflater, R.layout.exercise_home, container, false)
+            inflater, R.layout.exercise_home, container, false
+        )
 
-        binding.btnEx1.setOnClickListener{ view : View ->
+        binding.btnEx1.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_exerciseHome_to_excerciseOneFragment)
         }
 
-        binding.btnEx2.setOnClickListener{ view : View ->
+        binding.btnEx2.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_exerciseHome_to_exerciseTwoFragment)
         }
 
-        binding.btnEx3.setOnClickListener{ view : View ->
+        binding.btnEx3.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_exerciseHome_to_exerciseThreeFragment)
         }
 

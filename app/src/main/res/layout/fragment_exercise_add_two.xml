@@ -4,6 +4,7 @@
     tools:context="com.example.android.navigation.ExerciseAddTwoFragment">
 
     <data>
+
         <variable
             name="exerciseTwoViewModel"
             type="project.st991571169st991571540.gursikhpeter.ExerciseTwoViewmodel" />
@@ -43,8 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="84dp"
             android:background="@drawable/rounded_corners"
-            app:backgroundTint="@color/buttoncolour"
             android:text="Add / Update"
+            app:backgroundTint="@color/buttoncolour"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDistance"
@@ -56,11 +57,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="176dp"
             android:background="@drawable/rounded_corners"
-            app:backgroundTint="@color/buttoncolour"
             android:text="Select Time"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
+            app:backgroundTint="@color/buttoncolour"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titletxt" />
@@ -71,13 +72,13 @@
             android:layout_height="56dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/rounded_corners"
-            app:backgroundTint="@color/buttoncolour"
             android:hint="Enter Distance"
             android:inputType="number"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textColorHint="#8DFFFFFF"
             android:textSize="30dp"
+            app:backgroundTint="@color/buttoncolour"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,13 +103,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:background="@drawable/rounded_corners"
-            app:backgroundTint="@color/buttoncolour"
             android:onClick="openDatePicker"
             android:shadowColor="#FF5722"
             android:text="Select Date"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
+            app:backgroundTint="@color/buttoncolour"
             app:layout_constraintBottom_toTopOf="@+id/txtTime"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

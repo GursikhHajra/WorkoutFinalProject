@@ -9,28 +9,27 @@ import kotlinx.coroutines.*
 class ExerciseTwoViewmodel(
     val database: ExerciseTwoDao,
     application: Application
-) : AndroidViewModel(application){
+) : AndroidViewModel(application) {
 
     private var exerciseTwoJob = Job();
     private var uiScope = CoroutineScope(Dispatchers.Main + exerciseTwoJob)
 
     private var exercisetwolivedata = MutableLiveData<ExerciseTwoEntity>();
 
-  //  private var exercisetwolivedatalist = MutableLiveData<List<ExerciseTwoEntity>>();
+    //  private var exercisetwolivedatalist = MutableLiveData<List<ExerciseTwoEntity>>();
 
     var exercisetwolivedatalist = database.getAllExTwo()
 
-    fun addExerciseTwo(exercise: ExerciseTwoEntity)
-    {
+    fun addExerciseTwo(exercise: ExerciseTwoEntity) {
         uiScope.launch {
             insertExercise(exercise)
-            Toast.makeText(getApplication(),"Exercise Successfully Added", Toast.LENGTH_SHORT).show()
+            Toast.makeText(getApplication(), "Exercise Successfully Added", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 
-    private suspend fun insertExercise(exercise: ExerciseTwoEntity)
-    {
-        withContext(Dispatchers.IO){
+    private suspend fun insertExercise(exercise: ExerciseTwoEntity) {
+        withContext(Dispatchers.IO) {
             database.insertTwo(exercise)
         }
     }

@@ -2,40 +2,34 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group>
-    <item
-        android:id="@+id/exerciseHome"
-        android:title="Excercise Home"
-        />
+        <item
+            android:id="@+id/exerciseHome"
+            android:title="Excercise Home" />
 
-    <item
-        android:id="@+id/dietJournal"
-        android:title="Diet"
-        />
+        <item
+            android:id="@+id/dietJournal"
+            android:title="Diet" />
 
         <item
             android:id="@+id/aboutFragment"
-            android:title="About"
-            />
+            android:title="About" />
     </group>
     <group android:checkableBehavior="none">
-        <item android:title="______________________________________________________________"
+        <item
+            android:enabled="false"
             android:iconTint="@color/white"
-            android:enabled="false">
-        </item>
+            android:title="______________________________________________________________"></item>
     </group>
-<group>
-    <item
-        android:id="@+id/excerciseOneFragment"
-        android:title="Excercise PushUp"
-        />
-    <item
-        android:id="@+id/exerciseTwoFragment"
-        android:title="Excercise Cycling"
-        />
-    <item
-        android:id="@+id/exerciseThreeFragment"
-        android:title="Excercise Weightlifting"
-        />
-</group>
+    <group>
+        <item
+            android:id="@+id/excerciseOneFragment"
+            android:title="Excercise PushUp" />
+        <item
+            android:id="@+id/exerciseTwoFragment"
+            android:title="Excercise Cycling" />
+        <item
+            android:id="@+id/exerciseThreeFragment"
+            android:title="Excercise Weightlifting" />
+    </group>
 
 </menu>

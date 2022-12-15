@@ -21,17 +21,16 @@ class ExerciseThreeViewmodel(
 
     var exercisethreelivedatalist = database.getAllExThree()
 
-    fun addExerciseThree(exercise: ExerciseThreeEntity)
-    {
+    fun addExerciseThree(exercise: ExerciseThreeEntity) {
         uiScope.launch {
             insertExercise(exercise)
-            Toast.makeText(getApplication(),"Exercise Successfully Added", Toast.LENGTH_SHORT).show()
+            Toast.makeText(getApplication(), "Exercise Successfully Added", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 
-    private suspend fun insertExercise(exercise: ExerciseThreeEntity)
-    {
-        withContext(Dispatchers.IO){
+    private suspend fun insertExercise(exercise: ExerciseThreeEntity) {
+        withContext(Dispatchers.IO) {
             database.insert(exercise)
         }
     }

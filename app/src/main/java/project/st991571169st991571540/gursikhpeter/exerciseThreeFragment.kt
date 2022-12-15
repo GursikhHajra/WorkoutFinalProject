@@ -1,4 +1,9 @@
 package project.st991571169st991571540.gursikhpeter
+/*
+Made By:
+Peter Mascherin - 991571540
+Gursikh Hajra - 991571169
+ */
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,7 +22,7 @@ import androidx.lifecycle.*
 
 class ExerciseThreeFragment : Fragment() {
 
-    private lateinit var mDb:ProjectDB
+    private lateinit var mDb: ProjectDB
     private lateinit var manager: RecyclerView.LayoutManager
 
     override fun onCreateView(
@@ -28,10 +33,12 @@ class ExerciseThreeFragment : Fragment() {
 
         // Inflate the layout for this fragment
         val binding: FragmentExerciseThreeBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_exercise_three, container, false)
+            inflater, R.layout.fragment_exercise_three, container, false
+        )
 
-        binding.btnAdd.setOnClickListener{ view : View ->
-            view.findNavController().navigate(R.id.action_exerciseThreeFragment_to_exerciseAddThreeFragment)
+        binding.btnAdd.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_exerciseThreeFragment_to_exerciseAddThreeFragment)
         }
 
         val applicationContext = requireNotNull(this.activity).applicationContext;
@@ -44,9 +51,10 @@ class ExerciseThreeFragment : Fragment() {
 
         val dataSource = ProjectDB.getInstance(application).ExerciseThreeDao()
 
-        val viewModelFactory = ExcerciseThreeViewmodelFactory(dataSource,application);
+        val viewModelFactory = ExcerciseThreeViewmodelFactory(dataSource, application);
 
-        val exerciseThreeViewmodel = ViewModelProviders.of(this,viewModelFactory).get(ExerciseThreeViewmodel::class.java);
+        val exerciseThreeViewmodel =
+            ViewModelProviders.of(this, viewModelFactory).get(ExerciseThreeViewmodel::class.java);
 
         exerciseThreeViewmodel.exercisethreelivedatalist.observe(requireActivity(), Observer {
             binding.recyclerView.apply {

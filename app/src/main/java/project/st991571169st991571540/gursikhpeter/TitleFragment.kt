@@ -1,5 +1,9 @@
 package project.st991571169st991571540.gursikhpeter
-
+/*
+Made By:
+Peter Mascherin - 991571540
+Gursikh Hajra - 991571169
+ */
 import android.content.Intent
 import android.os.Bundle
 import android.view.*

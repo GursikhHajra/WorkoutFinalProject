@@ -34,13 +34,13 @@
         <Button
             android:id="@+id/btnAdd"
             style="@style/Widget.MaterialComponents.Button.Icon"
-            app:icon="@android:drawable/ic_input_add"
-            android:background="@drawable/rounded_corners"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_corners"
             android:text="Add"
+            app:icon="@android:drawable/ic_input_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="MissingConstraints" />

@@ -7,14 +7,14 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "exerciseOne")
 data class ExerciseOneEntity(
-@PrimaryKey(autoGenerate = true)
-var id: Int,
-@ColumnInfo(name = "date")
-var date: String,
-@ColumnInfo(name = "time")
-var timePicker: String,
-@ColumnInfo(name = "pushup")
-var pushup: Int
+    @PrimaryKey(autoGenerate = true)
+    var id: Int,
+    @ColumnInfo(name = "date")
+    var date: String,
+    @ColumnInfo(name = "time")
+    var timePicker: String,
+    @ColumnInfo(name = "pushup")
+    var pushup: Int
 )
 
 
