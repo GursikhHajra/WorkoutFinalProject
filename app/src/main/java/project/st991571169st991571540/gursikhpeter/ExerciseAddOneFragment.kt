@@ -110,7 +110,7 @@ class ExerciseAddOneFragment : Fragment() {
             timePicker.show()
         }
 
-        (activity as AppCompatActivity).supportActionBar?.title = ("Exercise Add Page")
+        (activity as AppCompatActivity).supportActionBar?.title = ("Exercise One Add Page")
 
         return binding.root
     }

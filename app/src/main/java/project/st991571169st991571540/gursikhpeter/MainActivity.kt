@@ -74,10 +74,11 @@ class MainActivity : AppCompatActivity() {
 
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-        val fiveminutes = 60000L * 5;
+        //val fiveminutes = 60000L * 5;
+        val thirty = 30000L;
         alarmManager.setInexactRepeating(
             AlarmManager.RTC_WAKEUP,
-            System.currentTimeMillis() + fiveminutes,
+            System.currentTimeMillis() + 3000L,
             AlarmManager.INTERVAL_DAY,
             pendingIntent
         )

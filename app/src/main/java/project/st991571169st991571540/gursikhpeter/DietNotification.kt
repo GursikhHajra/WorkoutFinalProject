@@ -9,7 +9,7 @@ import androidx.core.app.NotificationCompat
 
 
 const val notificationId = 1;
-const val channelId = "dietchannel";
+const val channelId = "dietchannelextra";
 const val titleExtra = "titleExtra";
 const val messageExtra = "messageExtra";
 

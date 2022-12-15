@@ -106,7 +106,7 @@ class ExerciseAddThreeFragment : Fragment() {
             timePicker.show()
         }
 
-        (activity as AppCompatActivity).supportActionBar?.title = ("Exercise Add Page")
+        (activity as AppCompatActivity).supportActionBar?.title = ("Exercise Three Add Page")
 
         return binding.root
     }
